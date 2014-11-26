@@ -46,11 +46,11 @@ void polyAdd(term *a, term *b, term *sum) {
 			a = a->next;
 			b = b->next;
 		}
-		else if(a->deg > b->deg) {
+		else if(a->deg < b->deg) {
 			sum = polyAttach(sum, b->coeff, b->deg);
 			b = b->next;
 		}
-		else if(a->deg < b->deg) {
+		else if(a->deg > b->deg) {
 			sum = polyAttach(sum, a->coeff, a->deg);
 			a = a->next;
 		}
